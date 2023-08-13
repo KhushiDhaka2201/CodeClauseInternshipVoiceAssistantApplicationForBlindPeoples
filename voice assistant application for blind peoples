@@ -1,0 +1,21 @@
+import java.io.IOException;
+import java.util.Scanner;
+public class VoiceAssistant {
+    private static final String VOICE_ASSISTANT_COMMAND = "Hey Google";
+    public static void main(String[] args) throws IOException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Voice Assistant!");
+        while (true) {
+            System.out.println("What can I help you with?");
+            String command = scanner.nextLine();
+            if (command.equals(VOICE_ASSISTANT_COMMAND)) {
+                System.out.println("What would you like to search for?");
+                String query = scanner.nextLine();
+                System.out.println("Here are some results for your search:");
+                System.out.println(GoogleSearch.search(query));
+            } else {
+                System.out.println("I don't understand.");
+            }
+        }
+    }
+}
